@@ -1,0 +1,46 @@
+package com.ATM;
+
+
+public class ATM
+{
+
+    private Account account;   //store its reference inside the ATM object.
+
+    public ATM(Account account) 
+    {
+        this.account = account;   //stores the received Account reference inside the current ATM object.
+    }
+    
+
+
+public boolean verifyPin(int enteredPin) 
+{
+    return account.verifyPin(enteredPin);  //method calling it calls from account class
+
+}
+
+
+public double getBalance() 
+{
+    return account.getBalance(); //to retrieve account balance
+}
+
+
+public boolean depositMoney(double amount) 
+{
+    return account.deposit(amount);   //passes the deposit amount to the Account object
+}
+
+
+public boolean withdrawMoney(double amount) 
+{
+    return account.withdraw(amount);  //passes the withdraw amount to the account object
+}
+
+
+public boolean changePin(int oldPin, int newPin) 
+{
+    return account.changePin(oldPin, newPin);  //changes the oldpin to newpin
+}
+}
+
